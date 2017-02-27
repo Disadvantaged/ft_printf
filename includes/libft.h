@@ -6,7 +6,7 @@
 /*   By: dgolear <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/09 09:44:19 by dgolear           #+#    #+#             */
-/*   Updated: 2017/02/19 14:00:42 by dgolear          ###   ########.fr       */
+/*   Updated: 2017/02/27 13:55:21 by dgolear          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,8 +97,8 @@ typedef struct	s_list
 	size_t			content_size;
 	struct s_list	*next;
 }				t_list;
-int				ft_lstsort(t_list **head,
-				int (*compare)(const void *, const void *));
+int				ft_lstsort(t_list **head, intmax_t
+		(*compare)(const void *, const void *));
 t_list			*ft_lstnew(void const *content, size_t content_size);
 void			ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
 void			ft_lstdel(t_list **alst, void (*del)(void *, size_t));
@@ -106,5 +106,7 @@ void			ft_lstadd(t_list **alst, t_list *new);
 void			ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list			*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 int				ft_lstlen(t_list *lst);
+void			ft_lstrev(t_list **head);
+void			ft_lstaddlast(t_list **alst, t_list *new);
 
 #endif

@@ -1,18 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_intcmp.c                                        :+:      :+:    :+:   */
+/*   ft_lstaddlast.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dgolear <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/02/05 12:44:03 by dgolear           #+#    #+#             */
-/*   Updated: 2017/02/27 13:51:21 by dgolear          ###   ########.fr       */
+/*   Created: 2017/02/05 15:36:17 by dgolear           #+#    #+#             */
+/*   Updated: 2017/02/05 15:41:24 by dgolear          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_intcmp(const void *a, const void *b)
+void	ft_lstaddlast(t_list **alst, t_list *new)
 {
-	return (*(int *)a - *(int *)b);
+	t_list	*node;
+
+	node = *alst;
+	if (node == NULL)
+		*alst = new;
+	else
+	{
+		while (node->next != NULL)
+			node = node->next;
+		node->next = new;
+	}
 }
